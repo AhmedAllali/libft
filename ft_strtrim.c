@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:15:11 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/24 01:53:59 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/24 03:29:55 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char * checkstart (char * s1 ,char  *set)
 {
     size_t i,j;
-    char * start = s1;
+    char *start = s1;
     
     i=0;
     while (s1[i])
@@ -37,20 +37,6 @@ char * checkstart (char * s1 ,char  *set)
     return start;
 }
 
-// char *check_str(char *str, char *set){
-//     char *ptr = NULL;
-//     int i = 0;
-//     int j = 0;
-//     while (str[i]){
-//         j = 0;
-//         while (set[j]){
-//             if (str[i] == set[j])
-//                 ptr = str + i;    
-//             j++;
-//         }
-//         i++;
-//     }
-// }
 char * checkend (char* s1 ,char *set)
 {
     int i,j;

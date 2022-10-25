@@ -6,7 +6,7 @@
 #    By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 23:18:10 by ahallali          #+#    #+#              #
-#    Updated: 2022/10/23 02:42:29 by ahallali         ###   ########.fr        #
+#    Updated: 2022/10/24 06:43:52 by ahallali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 AR = ar rcs
 RM = rm -f
 
@@ -45,7 +45,8 @@ FILES = ft_memset \
 		ft_strdup \
 		ft_substr\
 		ft_strjoin\
-		ft_strtrim
+		ft_strtrim\
+		ft_split
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
