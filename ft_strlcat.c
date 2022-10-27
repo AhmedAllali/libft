@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 22:02:24 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/19 01:53:08 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/27 02:48:29 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	while (src[i] && i + sz_d < size - 1)
 	{
-		dst[sz_d+i] = src[i];
+		dst[sz_d + i] = src[i];
 		i++;
 	}
 	if (sz_d < size)

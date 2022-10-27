@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 08:44:06 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 02:49:49 by ahallali         ###   ########.fr       */
+/*   Created: 2022/10/27 04:58:38 by ahallali          #+#    #+#             */
+/*   Updated: 2022/10/27 05:11:17 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_toupper(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 97 && c <= 122)
-		c -= 32;
-	return (c);
+	if (s)
+		write(fd, s, ft_strlen(s));
 }

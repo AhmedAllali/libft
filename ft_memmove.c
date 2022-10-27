@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:09:53 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/23 01:30:43 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/27 02:48:04 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len )
 	}
 	return (ft_memcpy(dst, src, len));
 }
-

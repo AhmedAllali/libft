@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 08:44:06 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 02:49:49 by ahallali         ###   ########.fr       */
+/*   Created: 2022/10/27 05:37:48 by ahallali          #+#    #+#             */
+/*   Updated: 2022/10/27 06:11:59 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_toupper(int c)
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 97 && c <= 122)
-		c -= 32;
-	return (c);
+    if (!s )
+        return(NULL);
+    
 }

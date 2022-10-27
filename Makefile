@@ -6,7 +6,7 @@
 #    By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 23:18:10 by ahallali          #+#    #+#              #
-#    Updated: 2022/10/24 06:43:52 by ahallali         ###   ########.fr        #
+#    Updated: 2022/10/27 05:15:01 by ahallali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,11 @@ FILES = ft_memset \
 		ft_substr\
 		ft_strjoin\
 		ft_strtrim\
-		ft_split
+		ft_split\
+		ft_itoa\
+		ft_putchar_fd\
+		ft_putstr_fd\
+		ft_putendl_fd
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

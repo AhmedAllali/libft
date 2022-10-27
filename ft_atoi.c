@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 22:37:40 by pasmadja          #+#    #+#             */
-/*   Updated: 2022/10/22 18:59:32 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/27 03:45:03 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *s)
 {
-	int		sign;
+	int				sign;
 	unsigned long	r;
 
 	r = 0;
@@ -33,9 +33,4 @@ int	ft_atoi(const char *s)
 		s++;
 	}
 	return ((int)(sign * r));
-}
-int main()
-{
-	//  printf("%d \n",ft_atoi("99999999999999999999999999"));
-	//  printf("%d",atoi("99999999999999999999999999"));
 }

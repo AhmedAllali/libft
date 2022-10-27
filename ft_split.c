@@ -6,13 +6,13 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:54:41 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/25 04:26:08 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/27 03:20:47 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	wordcount(char *str, char sep)
+size_t	wd(char *str, char sep)
 {
 	size_t	i;
 	size_t	count ;
@@ -50,7 +50,7 @@ size_t	wl(char *str, char sep)
 	return (size);
 }
 
-void ft_free(char **ptr, int size)
+char	**ft_free(char **ptr, int size)
 {
 	while (--size >= 0)
 	{
@@ -58,19 +58,14 @@ void ft_free(char **ptr, int size)
 		ptr[size] = NULL;
 	}
 	free(ptr);
+	return (NULL);
 }
 
-char *allocate_word(char **ptr, int size, int j)
+void	init_var(size_t	*i, size_t	*j, size_t	*size)
 {
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
-	{
-		ft_free(ptr, j);
-		return (NULL);
-	}
-	return (str);
+	*i = 0;
+	*j = 0;
+	*size = 0;
 }
 
 char	**ft_split(char const *s, char c)
@@ -78,33 +73,29 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	size_t	j;
 	size_t	i;
-	size_t	a;
+	size_t	size;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
-	ptr = (char **)malloc (sizeof (char *) * (wordcount ((char *)s, c) + 1));
+	init_var(&i, &j, &size);
+	ptr = (char **)ft_calloc((wd((char *)s, c) + 1), sizeof (char *));
 	if (!ptr)
 		return (NULL);
 	while (s[i])
-	{	
-		while (s[i] == c )
+	{
+		while (s[i] == c)
 			i++;
 		if (s[i] == '\0')
-			break;
-			
-			ptr[j] = allocate_word(ptr, wl((char *)s, c), j);
-			if (!ptr[j])
-				return (NULL);
-			a = 0;
-			while (s[i] && s[i] != c)
-				ptr[j][a++] = s[i++];
-			ptr[j++][a] = '\0';
+			break ;
+		size = wl((char *)s + i, c);
+		ptr[j] = ft_substr(s + i, 0, size);
+		if (!ptr[j])
+			return (ft_free(ptr, j));
+		i += size;
+		j++;
 	}
-	return (ptr[j] = 0, ptr);
+	return (ptr[j] = NULL, ptr);
 }
-
 
 // int main()
 // {

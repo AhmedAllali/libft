@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:03:04 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/19 02:04:06 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/27 02:22:09 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ void	*ft_calloc(size_t	count, size_t size)
 	size_t			loop;
 
 	loop = 0;
-	ptr = (unsigned char *)malloc(count * sizeof(size));
+	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	while (loop < count)
-		ptr[loop++] = 0;
-	return ((void *)ptr);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }
 // int main ()
 // {
