@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 00:02:51 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/23 01:23:53 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/10/31 01:42:39 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ void	*ft_memset(void *ptr, int c, size_t len)
 		((char *)ptr)[i++] = (unsigned char)c;
 	return (ptr);
 }
-
-// int main(int ac, char **av)
-// {
-// 	int i;
-// 	i=255;
-// 	ft_memset(&i, 0, 1);
-// 	printf("%d\n", i);
-// }

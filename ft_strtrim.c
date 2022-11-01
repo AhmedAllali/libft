@@ -6,13 +6,13 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:15:11 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 03:19:40 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/01 01:15:32 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-static char	*ft_checkstart(char *s1, char *set)
+static char	*ft_checkstart( char *s1, char *set)
 {
 	size_t	i;
 	size_t	j;
@@ -31,22 +31,12 @@ static char	*ft_checkstart(char *s1, char *set)
 				break ;
 			}
 			else if (s1[i] != set[j] && !set[j + 1])
-				return (start);
+				return ((char *)start);
 			j++;
 		}
 		i++;
 	}
-	return (start);
-}
-
-static int	ft_checker(char c, char b, char **end, char *s)
-{
-	if (b == c)
-	{
-		*end = s;
-		return (1);
-	}
-	return (0);
+	return ((char *)start);
 }
 
 static char	*ft_checkend(char *s1, char *set)
@@ -62,35 +52,36 @@ static char	*ft_checkend(char *s1, char *set)
 		j = 0;
 		while (set[j])
 		{
-			if (ft_checker(set[j], s1[i], &end, s1 + i - 1))
-				break ;
-			else if (s1[i] != set[j] && !set[j + 1])
+			if (s1[i] == set[j])
 			{
-				if (end != NULL)
-					*(end + 1) = '\0';
-				return (end);
+				break ;
+			}
+			if (s1[i] != set[j] && !set[j + 1])
+			{
+				end = &(s1[i]);
+				return ((char *)end);
 			}
 			j++;
 		}
 		i--;
 	}
-	return (end);
+	return ((char *)end);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*start;
-	char	*ptr;
 	char	*result;
 	char	*end;
 
 	if (!s1 || !set)
 		return (NULL);
 	result = NULL;
-	ptr = ft_strdup((char *)s1);
-	start = ft_checkstart(ptr, (char *)set);
-	end = ft_checkend(ptr, (char *) set);
-	result = ft_strdup(start);
-	free(ptr);
+	start = ft_checkstart((char *)s1, (char *)set);
+	end = ft_checkend((char *)s1, (char *) set);
+	result = ft_substr((char *) s1, (start - s1), \
+	(size_t)((((end + 1) - s1) - (start - s1))));
+	if (!result)
+		return (NULL);
 	return (result);
 }

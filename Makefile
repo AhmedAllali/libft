@@ -6,7 +6,7 @@
 #    By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 23:18:10 by ahallali          #+#    #+#              #
-#    Updated: 2022/10/27 05:15:01 by ahallali         ###   ########.fr        #
+#    Updated: 2022/11/01 04:18:46 by ahallali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,17 +50,20 @@ FILES = ft_memset \
 		ft_itoa\
 		ft_putchar_fd\
 		ft_putstr_fd\
-		ft_putendl_fd
+		ft_putendl_fd\
+		ft_putnbr_fd\
+		ft_striteri\
+		ft_strmapi
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
-	  		ft_lstsize \
-	  		ft_lstlast \
-	  		ft_lstadd_back \
-	  		ft_lstdelone \
-	  		ft_lstclear \
-	  		ft_lstiter \
-	  		ft_lstmap
+	  		ft_lstsize 
+	  		# ft_lstlast \
+	  		# ft_lstadd_back \
+	  		# ft_lstdelone \
+	  		# ft_lstclear \
+	  		# ft_lstiter \
+	  		# ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

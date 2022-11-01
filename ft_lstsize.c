@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 23:49:43 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/28 23:54:47 by ahallali         ###   ########.fr       */
+/*   Created: 2022/10/30 01:32:33 by ahallali          #+#    #+#             */
+/*   Updated: 2022/11/01 05:04:10 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_lstsize(t_list *lst)
 {
-	size_t	len;
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	if (!s || !f)
-		return (0);
-	len = ft_strlen(s);
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (0);
-	while (i < len)
+	int size;
+	size = 0;
+	while (lst)
 	{
-		ptr[i] = f(i, s[i]);
-		i++;
+		lst= lst->next;
+		size ++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (size);
 }
+// int main () 
+// {
+// 	t_list *lst;
+// 	t_list *ptr;
+// 	lst=ft_lstnew("ahmed");
+// 	ptr=ft_lstnew("aaaaaa");
+// 	lst->next = ptr;
+	
+	
+// 	printf("%d",ft_lstsize(lst));
+// }

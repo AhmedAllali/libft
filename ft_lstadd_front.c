@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 23:49:43 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/28 23:54:47 by ahallali         ###   ########.fr       */
+/*   Created: 2022/10/30 01:29:55 by ahallali          #+#    #+#             */
+/*   Updated: 2022/10/30 01:38:36 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	len;
-	size_t	i;
-	char	*ptr;
-
-	i = 0;
-	if (!s || !f)
-		return (0);
-	len = ft_strlen(s);
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (0);
-	while (i < len)
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		ptr[i] = f(i, s[i]);
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
-	ptr[i] = '\0';
-	return (ptr);
 }
+// int main ()
+// {
+
+// 	new = ft_lstnew((void *)"ahmed");
+// 	t_list	*head = ;
+// 	t_list	*new = NULL;
+// 	new = ft_lstnew((void *)"ahmed");
+// 	ft_lstadd_front(&head,new);
+// 	printf("%s",(char *)new->next);
+// }
