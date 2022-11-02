@@ -6,13 +6,13 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 23:14:15 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 02:50:16 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:05:34 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_countdigit(long long int c)
+static int	ft_countdigit(long long int c)
 {
 	int	count ;
 

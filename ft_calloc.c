@@ -6,14 +6,11 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:03:04 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 02:22:09 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:04:55 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-// #include<stdio.h>
-// #include<stdlib.h>
 
 void	*ft_calloc(size_t	count, size_t size)
 {
@@ -27,7 +24,3 @@ void	*ft_calloc(size_t	count, size_t size)
 	ft_bzero(ptr, count * size);
 	return (ptr);
 }
-// int main ()
-// {
-// printf("%s",ft_calloc(10, sizeof(int)));
-// }

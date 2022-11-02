@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 22:35:07 by pasmadja          #+#    #+#             */
-/*   Updated: 2022/11/02 05:00:01 by ahallali         ###   ########.fr       */
+/*   Created: 2022/11/01 09:14:45 by ahallali          #+#    #+#             */
+/*   Updated: 2022/11/02 04:55:49 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strcpy(char *s1, char *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*tmphead;
+	t_list	*tmp;
+	t_list	*head;
 
-	i = 0;
-	while (s2[i] != '\0')
+	if (!lst || !f || !del)
+		return (NULL);
+	tmphead = lst;
+	head = ft_lstnew(f(lst->content));
+	if (!head)
+		return (NULL);
+	lst = lst->next;
+	while (lst)
 	{
-		s1[i] = s2[i];
-		i++;
+	tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+			return (ft_lstclear(&head, del), NULL);
+		ft_lstadd_back(&head, tmp);
+	lst = lst->next;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (head);
 }

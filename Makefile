@@ -6,7 +6,7 @@
 #    By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 23:18:10 by ahallali          #+#    #+#              #
-#    Updated: 2022/11/01 04:18:46 by ahallali         ###   ########.fr        #
+#    Updated: 2022/11/01 09:45:00 by ahallali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,13 +57,13 @@ FILES = ft_memset \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
-	  		ft_lstsize 
-	  		# ft_lstlast \
-	  		# ft_lstadd_back \
-	  		# ft_lstdelone \
-	  		# ft_lstclear \
-	  		# ft_lstiter \
-	  		# ft_lstmap
+	  		ft_lstsize \
+	  		ft_lstlast \
+	  		ft_lstadd_back\
+	  		ft_lstdelone \
+	  		ft_lstclear \
+	  		ft_lstiter \
+	  		ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -73,6 +73,7 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
+all: $(NAME)
 
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -82,8 +83,6 @@ $(NAME): $(OBJS)
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $^
-
-all: $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_B)

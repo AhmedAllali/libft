@@ -6,13 +6,13 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:56:56 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/17 04:23:38 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:35:37 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memcpy(void	*dest, const	void	*src, size_t	size)
+void	*ft_memcpy(void	*dest, const void *src, size_t size)
 {
 	size_t	i;
 	char	*c_dest;
