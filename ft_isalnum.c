@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:51:39 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/30 07:28:14 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:08:52 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+	if (ft_isalpha (c) || ft_isdigit (c))
 		return (1);
 	return (0);
 }

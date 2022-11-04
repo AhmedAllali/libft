@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 23:02:19 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/31 22:57:10 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/03 01:45:49 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	char haystack[30] = "aaabcabcd";
-// 	printf("%s\n",ft_strnstr(haystack, "c", -1));// == haystack + 4
-// }

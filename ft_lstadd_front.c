@@ -6,7 +6,7 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 01:29:55 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/30 01:38:36 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/04 02:22:27 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 	}
 }
-// int main ()
-// {
-
-// 	new = ft_lstnew((void *)"ahmed");
-// 	t_list	*head = ;
-// 	t_list	*new = NULL;
-// 	new = ft_lstnew((void *)"ahmed");
-// 	ft_lstadd_front(&head,new);
-// 	printf("%s",(char *)new->next);
-// }

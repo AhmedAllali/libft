@@ -6,20 +6,20 @@
 #    By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 23:18:10 by ahallali          #+#    #+#              #
-#    Updated: 2022/11/01 09:45:00 by ahallali         ###   ########.fr        #
+#    Updated: 2022/11/04 09:10:10 by ahallali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 NAME = libft.a
-
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
+OBJS = $(SRCS:=.o)
+B_OBJS = $(BONUS:=.o)
 
-FILES = ft_memset \
+SRCS = ft_memset \
 		ft_bzero \
 		ft_memcpy \
 		ft_memcpy \
@@ -55,7 +55,7 @@ FILES = ft_memset \
 		ft_striteri\
 		ft_strmapi
 
-FILES_B = 	ft_lstnew \
+BONUS = 	ft_lstnew \
 	  		ft_lstadd_front \
 	  		ft_lstsize \
 	  		ft_lstlast \
@@ -65,31 +65,23 @@ FILES_B = 	ft_lstnew \
 	  		ft_lstiter \
 	  		ft_lstmap
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+all : ${NAME}
 
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+${NAME} : ${OBJS}
+	${AR} ${NAME} $^
 
-all: $(NAME)
+%.o : %.c libft.h
+	${CC} ${CFLAGS} -c $< -o  $@
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+bonus : ${NAME} ${B_OBJS}
+	${AR} ${NAME} ${B_OBJS}
 
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+clean :
+	${RM} ${OBJS} ${B_OBJS}
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
+fclean : clean
+	${RM} ${NAME}
 
-clean:
-	$(RM) $(OBJS) $(OBJS_B)
+re : fclean all bonus
 
-fclean: clean
-	$(RM) $(NAME)
-
-re: clean all
-
-.PHONY: bonus all clean fclean re
+.PHONY : bonus fclean clean re

@@ -6,13 +6,11 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 09:54:46 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/17 02:33:24 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/04 03:27:06 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-
-// #include<stdio.h>
 
 int	ft_tolower(int c)
 {
@@ -20,9 +18,3 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
-// int main ()
-// {
-//     char c;
-//     c='A';
-//     printf ("%d",ft_tolower(c));
-// }

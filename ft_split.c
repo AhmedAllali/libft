@@ -6,16 +6,16 @@
 /*   By: ahallali <ahallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:54:41 by ahallali          #+#    #+#             */
-/*   Updated: 2022/10/27 03:20:47 by ahallali         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:54:15 by ahallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	wd(char *str, char sep)
+static size_t	wd(char *str, char sep)
 {
 	size_t	i;
-	size_t	count ;
+	size_t	count;
 	int		flag;
 
 	i = 0;
@@ -35,22 +35,22 @@ size_t	wd(char *str, char sep)
 	return (count);
 }
 
-size_t	wl(char *str, char sep)
+static size_t	wl(char *str, char sep)
 {
 	size_t	size;
 	size_t	i;
 
 	i = 0;
 	size = 0;
-	while (str[(i)] && str[i] != sep)
+	while (str[i] && str[i] != sep)
 	{
 		size++;
-		(i)++;
+		i++;
 	}
 	return (size);
 }
 
-char	**ft_free(char **ptr, int size)
+static char	**ft_free(char **ptr, int size)
 {
 	while (--size >= 0)
 	{
@@ -61,7 +61,7 @@ char	**ft_free(char **ptr, int size)
 	return (NULL);
 }
 
-void	init_var(size_t	*i, size_t	*j, size_t	*size)
+static void	init_var(size_t	*i, size_t	*j, size_t	*size)
 {
 	*i = 0;
 	*j = 0;
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	init_var(&i, &j, &size);
-	ptr = (char **)ft_calloc((wd((char *)s, c) + 1), sizeof (char *));
+	ptr = (char **)malloc((wd((char *)s, c) + 1) * sizeof (char *));
 	if (!ptr)
 		return (NULL);
 	while (s[i])
@@ -96,21 +96,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (ptr[j] = NULL, ptr);
 }
-
-// int main()
-// {
-//     char t []="       chi ha ja la kh er";
-//     char c =' ';
-//     char **ptr;
-//     int i = 0;
-//     ptr = ft_split(t, c);
-//     while (ptr[i])
-//     {
-//         printf("%s\n", ptr[i]);
-// 		// printf("---------------");
-// 		// printf("%s\n", NULL);
-// 		// printf("---------------\n");
-//         i++;
-//     }
-//     return (0);
-// }
